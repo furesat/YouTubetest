@@ -23,12 +23,22 @@
   <span class="tag">Test yayını · Taslak</span>
   <h1>Kahve Neden Defalarca Yasaklandı?</h1>
   <p class="sub">Video 001 — ilk tam kurgu (720p önizleme). Altyazılar CC düğmesinden açılır.</p>
-  <video controls preload="metadata" poster="media/poster.jpg" playsinline>
+  <video id="v" controls preload="metadata" poster="media/poster.jpg" playsinline>
     <source src="media/kahve-001-tr.mp4" type="video/mp4">
-    <track kind="subtitles" src="media/kahve-001-tr.tr.vtt" srclang="tr" label="Türkçe" default>
+    <track kind="subtitles" src="media/kahve-001-tr.tr.vtt" srclang="tr" label="Türkçe">
     Tarayıcınız video öğesini desteklemiyor.
   </video>
   <p class="meta"><b>Süre:</b> 7 dk 35 sn &nbsp;·&nbsp; <b>Dil:</b> Türkçe &nbsp;·&nbsp; <b>Durum:</b> Taslak, herkese açık yayın değil.</p>
 </main>
+<script>
+  // Altyazı ilk açılışta kapalı gelsin (Safari dahil); izleyici CC menüsünden açabilir.
+  (function () {
+    var v = document.getElementById('v');
+    function off() { for (var i = 0; i < v.textTracks.length; i++) v.textTracks[i].mode = 'disabled'; }
+    off();
+    v.addEventListener('loadedmetadata', off);
+    v.addEventListener('play', function once() { off(); v.removeEventListener('play', once); });
+  })();
+</script>
 </body>
 </html>
