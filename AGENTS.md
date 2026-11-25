@@ -1,4 +1,4 @@
-# AGENTS.md – Fasulye YouTube test sitesi
+# AGENTS.md – FuresTube test sitesi
 
 ## Amaç
 Bu repo, gerçek videoların ve kapakların YouTube benzeri ortamda değerlendirilmesi için bağımsız test sitesidir. Kanal üretim dosyalarının ana deposu https://github.com/furesat/youtube-studio- adresidir. Bu repo ise yalnızca önizleme/yayın katmanıdır.

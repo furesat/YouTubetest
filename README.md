@@ -1,4 +1,4 @@
-# Fasulye Studio – YouTube görünüm testi
+# FuresTube – bağımsız video sitesi görünüm testi
 
 Canlı test: https://youtubefur.netlify.app
 
